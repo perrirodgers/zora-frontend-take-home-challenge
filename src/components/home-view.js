@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { PhotoView } from "./photo-view";
 import { SearchBar } from "./searchBar";
 import { PaginationView } from "../common/pagination-view";
-import { getAllPhotos } from "../common/store/actions/photos-actions";
+import { getAllPhotos, getSearchedPhoto } from "../common/store/actions/photos-actions";
 
 
 export const HomeView = () => {
@@ -24,14 +24,21 @@ export const HomeView = () => {
     // for page numbers
     const [pageNumber, setPageNumber] = useState(1);
 
+    // for fetching all photos from api
     useEffect(() => {
-        // for fetching all photos from api
         dispatch(getAllPhotos())
         if (searchKeyword.length < 1) {
             // when no search query available to refresh all data
             dispatch(getAllPhotos())
         }
     }, [dispatch, searchKeyword])
+
+    // for search filter
+    useEffect(() => {
+        if (searchKeyword.length > 0) {
+            dispatch(getSearchedPhoto(searchKeyword, pageNumber, orderBy, color))
+        }
+    }, [dispatch, searchKeyword, orderBy, pageNumber, color])
 
 
     return (
@@ -44,7 +51,7 @@ export const HomeView = () => {
                 <SearchBar
                     value={searchKeyword}
                     setSearchKeyword={setSearchKeyword}
-                    onClick={() => { }}
+                    onClick={() => { dispatch(getSearchedPhoto(searchKeyword, pageNumber)) }}
                 />
             </div>
 
