@@ -1,10 +1,73 @@
-# Getting Started with Create React App
+# React Redux Test Assessment Project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Project Description
+
+This is a test assessment project built with React and Redux. The purpose of this project is to evaluate your understanding of these technologies and your ability to create a functional web application using them.
+
+This Project is a Simple ReactJS Project with redux store which demonstrates the following
+
+1. Creating a Component in React
+2. Making HTTP calls
+3. Communicating between parent and child component
+4. Using Bootstrap along with React
+5. Using Basic Routing in React
+6. Using redux for state management
+7. Using axios for api calls
+8. Displaying dynamic images with using unsplash
+9. Search & filter features demonstration
+10. Pagination demonstration
+
+The project Template can be used to build bigger projects
+
+## Getting Started
+
+To get started with this project, follow these steps:
+
+### Prerequisites
+
+Before you begin, ensure you have the following software installed on your system:
+
+- Node.js: Make sure you have Node.js installed. You can download it from [https://nodejs.org/](https://nodejs.org/).
+
+### Installation
+
+1. Clone this repository to your local machine:
+
+   ```bash
+   git clone https://github.com/your-username/avinash-react-assessment-2.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd react-redux-assessment
+   ```
+
+3. Install the project dependencies using npm:
+
+   ```bash
+   npm i
+   ```
+
+### Running the Application
+
+Once you have installed the project dependencies, you can start the development server:
+
+```bash
+npm start
+```
+
+This command will start the development server, and the application will be available at `http://localhost:3000` in your web browser.
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm i`
+
+Install the project dependencies. Run this command to set up the required packages before starting the application.
 
 ### `npm start`
 
@@ -14,57 +77,64 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified, and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+The Application Runs on **localhost:3000**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The project structure is organized as follows:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+react-test-assessment/
+  ├──public
+  |
+  ├── src/
+  │   ├── common/
+  │   │      ├── store/
+  │   │      │     ├──actions/
+  │   │      │     │        ├──action-types.js
+  │   │      │     │         ├──photos-actions.js
+  │   │      │     ├──reducers/
+  │   │      │     │      ├──photo-reducers.js
+  │   │      │     ├──apiConstants.js
+  │   │      │     ├──apiServices.js
+  │   │      │     ├──root-reducer.js
+  │   │      ├── pagination-view.js
+  │   │
+  │   ├── components/
+  │   │       ├──home-view.js
+  │   │       ├──index.js
+  │   │       ├──photo-view.js
+  │   │       ├──searchBar.js
+  │   ├──static/
+  │   │       ├──css
+  │   │           ├──my-css.css
+  │   │
+  │   ├── App.js
+  │   ├── index.js
+  ├── package.json
+  ├── README.md
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Application design
 
-## Learn More
+#### Components
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Home-View** Component : This Component displays a dynamic images list. This Component gets the data from a api call from unsplash server using axios
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Photo-View** Component : This Component Displays the list of the images. This Component gets its parent component from home file. This Component is the Child Component of _Home-View_ Component
 
-### Code Splitting
+3. **SearchBar** Component : This component used to search query for displaying images. This Component gets its parent component from home file. This Component is the Child Component of _Home-View_ Component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Usage
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You can modify and extend this project to complete the test assessment according to the instructions provided.
