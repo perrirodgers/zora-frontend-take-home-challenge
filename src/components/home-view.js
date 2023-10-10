@@ -1,10 +1,20 @@
-import React, { useState } from "react";
-import { SearchBar } from "./searchBar";
+import React, { useEffect, useState } from "react";
 import { Dropdown } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+
 import { PhotoView } from "./photo-view";
+import { SearchBar } from "./searchBar";
 import { PaginationView } from "../common/pagination-view";
+import { getAllPhotos } from "../common/store/actions/photos-actions";
+
 
 export const HomeView = () => {
+    // for dispatching api
+    const dispatch = useDispatch();
+
+    // for getting data from redux state
+    const allPhotos = useSelector(({ photos }) => photos?.allPhotos);
+
     // for search keyword
     const [searchKeyword, setSearchKeyword] = useState("");
     // for orderby filter
@@ -13,6 +23,15 @@ export const HomeView = () => {
     const [color, setColor] = useState("Select Color");
     // for page numbers
     const [pageNumber, setPageNumber] = useState(1);
+
+    useEffect(() => {
+        // for fetching all photos from api
+        dispatch(getAllPhotos())
+        if (searchKeyword.length < 1) {
+            // when no search query available to refresh all data
+            dispatch(getAllPhotos())
+        }
+    }, [dispatch, searchKeyword])
 
 
     return (
@@ -88,7 +107,7 @@ export const HomeView = () => {
             </div>
 
             <div className="photos-gallery-section">
-                <PhotoView />
+                <PhotoView photoData={allPhotos} />
             </div>
 
             <div className="pagination d-flex justify-content-center">
