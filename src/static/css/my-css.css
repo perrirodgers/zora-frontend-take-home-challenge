@@ -1,0 +1,14 @@
+.main-container {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.searchFilter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchFilter i {
+  margin-left: 5px;
+}

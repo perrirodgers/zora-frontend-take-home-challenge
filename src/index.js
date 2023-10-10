@@ -11,9 +11,12 @@ import rootReducer from './common/store/root-reducer';
 import { configureStore } from '@reduxjs/toolkit';
 import persistStore from 'redux-persist/es/persistStore';
 
+import "./static/css/my-css.css";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = configureStore({ reducer: rootReducer, middleware: [thunk] }); // redux store configuration
 const persistor = persistStore(store); // for persist store
+
 
 root.render(
   // <React.StrictMode>

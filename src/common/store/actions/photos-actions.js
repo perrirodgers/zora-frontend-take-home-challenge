@@ -1,5 +1,5 @@
 
-import { UnsplashApiUrl } from "../api-url";
+import { UnsplashApiUrl } from "../apiContants";
 import { Instance } from "../apiServices";
 import { unsplashActions } from "./action-types";
 
