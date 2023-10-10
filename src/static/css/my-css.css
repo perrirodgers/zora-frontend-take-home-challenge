@@ -12,3 +12,10 @@
 .searchFilter i {
   margin-left: 5px;
 }
+
+.dropdownContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px auto;
+    padding: 10px;
+}
