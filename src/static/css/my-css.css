@@ -19,3 +19,17 @@
     margin: 10px auto;
     padding: 10px;
 }
+
+.photo-container {
+  padding: 15px 30px;
+}
+
+.photoImage {
+    margin: auto;
+    align-self: center;
+    align-items: center;
+    height: 225px;
+    vertical-align: middle;
+    width: 225px;
+    border-radius: 8px;
+}

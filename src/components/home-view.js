@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { SearchBar } from "./searchBar";
 import { Dropdown } from "react-bootstrap";
+import { PhotoView } from "./photo-view";
 
 export const HomeView = () => {
     // for search keyword
@@ -78,6 +79,10 @@ export const HomeView = () => {
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
+            </div>
+            <div className="photos-gallery-section">
+                <PhotoView />
+
             </div>
         </>
     );
